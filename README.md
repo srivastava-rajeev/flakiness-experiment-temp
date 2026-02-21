@@ -32,11 +32,9 @@ XGBoost (if used)
 ```bash
 ✅ How to Run
 Installation steps
-```bash
    pip install -r requirements.txt
    python train_model.py
    ```
-```
 ```bash
 ✅ Results Section
 Include:
