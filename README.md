@@ -36,23 +36,23 @@ This project demonstrates how supervised machine learning can proactively detect
 
 The framework consists of the following layers:
 
-1. **System Under Test (SUT)**  
-   Node.js + Express application with controlled flakiness injection.
+### 1. System Under Test (SUT)
+Node.js + Express application with controlled flakiness injection.
 
-2. **Playwright Test Suite**  
-   Stable and intentionally flaky tests to generate ground truth.
+### 2. Playwright Test Suite
+Stable and intentionally flaky tests to generate ground truth.
 
-3. **Execution Harness**  
-   Automates repeated test execution and collects logs.
+### 3. Execution Harness
+Automates repeated test execution and collects logs.
 
-4. **Log Aggregation & Feature Engineering**  
-   Extracts statistical features from historical runs.
+### 4. Log Aggregation & Feature Engineering
+Extracts statistical features from historical runs.
 
-5. **Machine Learning Pipeline**  
-   Trains classification models (Scikit-learn / XGBoost).
+### 5. Machine Learning Pipeline
+Trains classification models (Scikit-learn / XGBoost).
 
-6. **Evaluation & CI Simulation**  
-   Measures predictive performance and potential CI stability improvements.
+### 6. Evaluation & CI Simulation
+Measures predictive performance and potential CI stability improvements.
 
 ---
 
