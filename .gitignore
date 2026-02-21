@@ -17,3 +17,5 @@ data/raw/*.ndjson
 
 # Other generated files
 .DS_Store
+nohup.out
+package-lock.json
