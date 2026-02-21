@@ -1,19 +1,26 @@
 # Detecting Flaky Tests Using Machine Learning in CI/CD Pipelines
+```bash
 ✅ Problem Statement
 Explain:
 What are flaky tests?
 Why are they harmful in CI/CD?
 Cost impact
+```
+```bash
 ✅ Objectives
 Detect flaky tests
 Engineer features from historical runs
 Train ML models
 Evaluate performance
+```
+```bash
 ✅ Methodology
 Dataset description
 Feature extraction approach
 ML algorithms used
 Evaluation metrics
+```
+```bash
 ✅ Tech Stack
 Python
 Playwright / Selenium
@@ -21,22 +28,29 @@ GitHub Actions
 Pandas
 Scikit-learn
 XGBoost (if used)
+```
+```bash
 ✅ How to Run
 Installation steps
 ```bash
    pip install -r requirements.txt
    python train_model.py
    ```
+```
+```bash
 ✅ Results Section
 Include:
 Accuracy
 Precision/Recall
 Confusion matrix
 Any charts
+```
+```bash
 ✅ Future Work
 Real-time CI integration
 Reinforcement learning
 Flakiness root-cause clustering
+```
 
 # Flakiness Experiment
 
