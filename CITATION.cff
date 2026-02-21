@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Detecting Flaky Tests Using Machine Learning in CI/CD Pipelines"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Srivastava
+    given-names: Rajeev
+    affiliation: Independent Researcher
+repository-code: "https://github.com/raja2rajeev/flakiness-experiment-temp"
+license: MIT
