@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Flakiness SUT</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    #result { margin-top: 1rem; padding:0.5rem; border:1px solid #ddd; min-height: 24px; }
+  </style>
+</head>
+<body>
+  <h1 id="title">Flakiness SUT</h1>
+  <p>Click the button to trigger two concurrent async actions (creates race condition).</p>
+  <button id="runBtn">Run Async Actions</button>
+  <div id="result">—</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

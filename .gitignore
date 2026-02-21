@@ -1,0 +1,19 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Data files
+data/raw/*.csv
+data/raw/*.ndjson
+
+# Environment files
+.env
+
+# Other generated files
+.DS_Store

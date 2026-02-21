@@ -1,0 +1,13 @@
+{
+  "test_name": "string",
+  "run_id": "string",
+  "duration_ms": "number",
+  "pass_fail": "boolean",
+  "retry_count": "number",
+  "browser": "string",
+  "headless_mode": "boolean",
+  "timestamp": "string",
+  "cpu_load": "number",
+  "memory_usage": "number",
+  "network_latency": "number"
+}

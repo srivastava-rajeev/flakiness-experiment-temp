@@ -1,0 +1,26 @@
+{
+  "experiment_id": "exp-local-001",
+  "runs": 10,
+  "seed": 12345,
+  "browsers": ["chromium"],
+  "headless": true,
+  "flakiness": {
+    "timing": {
+      "minDelay": 0,
+      "maxDelay": 3000
+    },
+    "network": {
+      "failureRate": 0.3
+    },
+    "dom": {
+      "renderDelay": 2000
+    },
+    "concurrency": {
+      "enabled": true
+    }
+  },
+  "orchestrator": {
+    "numRuns": 100,
+    "logFile": "data/raw/execution_logs.ndjson"
+  }
+}

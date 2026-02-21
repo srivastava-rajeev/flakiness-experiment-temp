@@ -1,0 +1,12 @@
+{
+  "seed": 12345,
+  "delay_ms": { "min": 0, "max": 1500 },
+  "delay_enabled": true,
+  "network_failure_prob": 0.25,
+  "network_abort_enabled": true,
+  "dom_delay_ms": { "min": 0, "max": 800 },
+  "dom_delay_enabled": true,
+  "concurrency_race_enabled": true,
+  "success_prob": 0.8,
+  "dev_mode": true
+}
