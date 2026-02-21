@@ -19,3 +19,4 @@ data/raw/*.ndjson
 .DS_Store
 nohup.out
 package-lock.json
+test-results/

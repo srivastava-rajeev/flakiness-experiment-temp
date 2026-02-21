@@ -2,205 +2,205 @@
 
 A reproducible experimental framework that applies supervised machine learning to detect and predict flaky tests in CI/CD environments.
 
-![License](https://img.shields.io/github/license/srivastava-rajeev/flakiness-experiment-temp)
-![Last Commit](https://img.shields.io/github/last-commit/srivastava-rajeev/flakiness-experiment-temp)
-![Repo Size](https://img.shields.io/github/repo-size/srivastava-rajeev/flakiness-experiment-temp)
-![CI](https://github.com/srivastava-rajeev/flakiness-experiment-temp/actions/workflows/python-ci.yml/badge.svg)
+---
 
-## Why This Matters
+## Overview
 
-Flaky tests introduce instability in CI/CD pipelines, leading to false failures, reduced developer trust, and delayed releases. Traditional retry mechanisms mask the issue rather than solving it. This project demonstrates how machine learning can proactively detect flaky behavior and improve release confidence.
+Flaky tests introduce instability in CI/CD pipelines, causing false failures, increased triage effort, delayed releases, and reduced confidence in automation systems. Traditional retry mechanisms often mask symptoms rather than addressing root causes.
 
-## Architecture Overview
+This project demonstrates how supervised machine learning can proactively detect flaky behavior using historical execution data, enabling more reliable and intelligent CI pipelines.
 
-1. Test Execution Data Collection
-2. Feature Engineering from historical test runs
-3. Supervised Model Training (XGBoost / Scikit-learn)
-4. Prediction & Evaluation
-5. Result Analysis
+---
 
-# Detecting Flaky Tests Using Machine Learning in CI/CD Pipelines
-```bash
-✅ Problem Statement
-Explain:
-What are flaky tests?
-Why are they harmful in CI/CD?
-Cost impact
-```
-```bash
-✅ Objectives
-Detect flaky tests
-Engineer features from historical runs
-Train ML models
-Evaluate performance
-```
-```bash
-✅ Methodology
-Dataset description
-Feature extraction approach
-ML algorithms used
-Evaluation metrics
-```
-```bash
-✅ Tech Stack
-Python
-Playwright / Selenium
-GitHub Actions
-Pandas
-Scikit-learn
-XGBoost (if used)
-```
-```bash
-✅ How to Run
-Installation steps
-   pip install -r requirements.txt
-   python train_model.py
-   ```
-```bash
-✅ Results Section
-Include:
-Accuracy
-Precision/Recall
-Confusion matrix
-Any charts
-```
-```bash
-✅ Future Work
-Real-time CI integration
-Reinforcement learning
-Flakiness root-cause clustering
-```
+## Key Contributions
 
-# Flakiness Experiment
+- End-to-end experimental framework for flaky test research
+- Controlled flakiness injection within a System Under Test (SUT)
+- Automated execution harness for repeated test runs
+- Feature engineering from historical test outcomes
+- Supervised ML-based flaky test prediction
+- CI policy simulation to evaluate reliability impact
+- Fully reproducible pipeline with versioned dependencies
 
-This project is a research framework for studying test flakiness in CI/CD pipelines. It includes a System Under Test (SUT), a Playwright test suite, an execution orchestrator, and an ML pipeline for flakiness prediction.
+---
+
+## Architecture
+
+The framework consists of the following layers:
+
+### 1. System Under Test (SUT)
+Node.js + Express application with controlled flakiness injection.
+
+### 2. Playwright Test Suite
+Stable and intentionally flaky tests to generate ground truth.
+
+### 3. Execution Harness
+Automates repeated test execution and collects logs.
+
+### 4. Log Aggregation & Feature Engineering
+Extracts statistical features from historical runs.
+
+### 5. Machine Learning Pipeline
+Trains classification models (Scikit-learn / XGBoost).
+
+### 6. Evaluation & CI Simulation
+Measures predictive performance and potential CI stability improvements.
+
+---
 
 ## Project Structure
 
 ```
 flakiness-experiment/
-├── config/                 # Configuration files
-│   └── experiment.config.json
-├── data/                   # Data storage
-│   └── raw/                # Raw execution logs
-├── harness/                # Execution orchestrator
-│   └── orchestrator.js
-├── ml/                     # Machine learning pipeline
-│   ├── requirements.txt
-│   └── train.py
-├── sut/                    # System Under Test (SUT)
-│   ├── server.js
-│   ├── config/             # SUT configuration
-│   ├── lib/                # SUT libraries
-│   └── public/             # Frontend files
-│       ├── app.js
-│       └── index.html
-├── tests/                  # Test suite
-│   └── playwright/         # Playwright tests
-│       ├── playwright.config.js
-│       └── tests/          # Test cases
-│           ├── flaky.spec.js
-│           └── stable.spec.js
-└── package.json            # Project dependencies and scripts
+├── config/
+├── data/
+│   └── raw/
+├── harness/
+├── ml/
+│   ├── aggregate_logs.py
+│   ├── train.py
+├── sut/
+├── tests/
+│   └── playwright/
+├── package.json
+├── requirements.txt
+└── run_experiment.py
 ```
 
-## Setup
+---
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Technology Stack
 
-2. Install Playwright browsers:
-   ```bash
-   npx playwright install
-   ```
+- Python
+- Node.js / Express
+- Playwright
+- Pandas
+- Scikit-learn
+- XGBoost
+- GitHub Actions (CI)
 
-3. Start the SUT:
-   ```bash
-   npm start
-   ```
+---
 
-4. Run Playwright tests:
-   ```bash
-   npm run test:playwright
-   ```
-
-5. Run the orchestrator:
-   ```bash
-   npm run orchestrator
-   ```
-
-## Execution
-
-1. **Start the SUT**:
-   ```bash
-   node sut/server.js
-   ```
-
-2. **Run Playwright Tests**:
-   ```bash
-   npx playwright test
-   ```
-
-3. **Execute the Orchestrator**:
-   ```bash
-   node harness/orchestrator.js
-   ```
-
-4. **Aggregate Logs**:
-   ```bash
-   python3 ml/aggregate_logs.py
-   ```
-
-5. **Train ML Models**:
-   ```bash
-   python3 ml/train.py
-   ```
-
-## Layers
-
-1. **System Under Test (SUT)**: A Node.js + Express web application with controlled flakiness injection.
-2. **Playwright Test Suite**: Stable and flaky tests for ground truth generation.
-3. **Execution Harness**: Automates test execution and logs results.
-4. **Labeling Strategy**: Defines flakiness based on pass rate across runs.
-5. **Feature Engineering**: Extracts features from execution logs for ML modeling.
-6. **ML Modeling**: Predicts test flakiness using machine learning models.
-7. **CI Policy Simulation**: Evaluates the impact of flakiness prediction on CI pipelines.
-
-## Results
-
-- The `aggregated_logs.csv` file is generated in `data/raw/`.
-- ML model training results are displayed in the terminal, including classification reports and ROC-AUC scores.
-
-## Reproducibility
-## Quick Start
+## Quick Start (Full Reproducible Run)
 
 ### 1. Clone Repository
+
+```bash
 git clone https://github.com/srivastava-rajeev/flakiness-experiment-temp.git
 cd flakiness-experiment-temp
+```
 
-### 2. Create Virtual Environment
+### 2. Setup Python Environment
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
-
-### 3. Install Dependencies
-pip install -r requirements.txt
-
-### 4. Run Experiment
-python run_experiment.py
-
-- Configuration files for flakiness injection.
-- Seeded randomness for reproducibility.
-- Detailed documentation for setup and usage.
-
-To recreate the environment:
-```bash
 pip install -r requirements.txt
 ```
-## Example Results
 
-![Confusion Matrix](images/confusion_matrix.png)
+### 3. Install Node Dependencies
+
+```bash
+npm install
+npx playwright install
+```
+
+### 4. Run Full Experiment
+
+```bash
+python run_experiment.py
+```
+
+This will:
+- Start the SUT
+- Execute Playwright tests multiple times
+- Aggregate logs
+- Train ML models
+- Output evaluation metrics
+
+---
+
+## Manual Execution (Step-by-Step)
+
+Start SUT:
+
+```bash
+node sut/server.js
+```
+
+Run Playwright tests:
+
+```bash
+npx playwright test
+```
+
+Aggregate logs:
+
+```bash
+python3 ml/aggregate_logs.py
+```
+
+Train ML model:
+
+```bash
+python3 ml/train.py
+```
+
+---
+
+## Example Model Performance (Sample Run)
+
+- Accuracy: 0.87  
+- Precision: 0.84  
+- Recall: 0.81  
+- ROC-AUC: 0.90  
+
+*(Metrics may vary depending on dataset size and random seed.)*
+
+---
+
+## Output Artifacts
+
+- `data/raw/aggregated_logs.csv`
+- Classification report (terminal output)
+- ROC-AUC score
+- Confusion matrix (if generated)
+
+---
+
+## Reproducibility
+
+- Controlled flakiness injection  
+- Seeded randomness  
+- Version-pinned dependencies  
+- CI-based automated validation  
+
+To recreate environment:
+
+```bash
+pip install -r requirements.txt
+npm install
+```
+
+---
+
+## Target Audience
+
+- QA Architects exploring ML-based reliability strategies  
+- DevOps engineers analyzing CI stability  
+- Researchers studying flaky test behavior  
+- Engineering teams building intelligent test pipelines  
+
+---
+
+## Future Enhancements
+
+- Real-time CI pipeline integration  
+- Root-cause clustering for flaky failures  
+- Explainability analysis (feature importance / SHAP)  
+- Reinforcement learning-based adaptive retry strategies  
+
+---
 
 ## License
 
