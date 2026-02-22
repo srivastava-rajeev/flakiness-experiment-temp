@@ -65,6 +65,14 @@ Post #4 implementation artifacts:
 - `ci_integration/policy_simulator.py` (risk-threshold CI policy simulation)
 - `ci_integration/threshold_scenarios.csv` (threshold-by-threshold cost and confusion estimate)
 
+Post #5 implementation artifacts:
+
+- `docs/root-causes-taxonomy.md` (engineering root-cause classes mapped to signals and mitigations)
+
+Post #6 implementation artifacts:
+
+- `notebooks/observability_signals.ipynb` (signal-driven ranking of unstable tests using logs/metrics proxies)
+
 ---
 
 ## Key Contributions
