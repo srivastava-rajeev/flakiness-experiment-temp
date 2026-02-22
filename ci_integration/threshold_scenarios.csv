@@ -1,0 +1,4 @@
+model,threshold,accuracy,precision,recall,tp,fp,fn,tn,estimated_policy_cost,cost_delta_vs_t0_30
+logistic_regression,0.30,0.6600,0.6537,0.9282,561.55,297.49,43.45,97.51,980.03,0.00
+logistic_regression,0.50,0.6067,0.6864,0.6409,387.73,177.15,217.27,217.85,1391.83,411.80
+logistic_regression,0.70,0.5233,0.8393,0.2597,157.10,30.08,447.90,364.92,1953.38,973.35

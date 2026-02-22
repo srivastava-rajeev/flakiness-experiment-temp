@@ -60,6 +60,11 @@ Post #3 implementation artifacts:
 - `models/evaluate.py` (threshold-oriented evaluation summary)
 - `models/results/baseline_metrics.json` (ROC-AUC + precision/recall metrics at multiple thresholds)
 
+Post #4 implementation artifacts:
+
+- `ci_integration/policy_simulator.py` (risk-threshold CI policy simulation)
+- `ci_integration/threshold_scenarios.csv` (threshold-by-threshold cost and confusion estimate)
+
 ---
 
 ## Key Contributions
