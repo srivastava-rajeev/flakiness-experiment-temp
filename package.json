@@ -11,7 +11,7 @@
     "ml:train": "python3 ml/train.py"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "body-parser": "^2.2.2",
     "express": "^5.2.1"
   },
   "devDependencies": {
