@@ -1,0 +1,39 @@
+name: Quality Gate
+on: [pull_request, push]
+permissions: { contents: read, security-events: write, pull-requests: read }
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      has_python: ${{ steps.scan.outputs.has_python }}
+      has_node: ${{ steps.scan.outputs.has_node }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: scan
+        run: |
+          if ls **/*.py >/dev/null 2>&1; then echo "has_python=true" >> $GITHUB_OUTPUT; else echo "has_python=false" >> $GITHUB_OUTPUT; fi
+          if [ -f package.json ]; then echo "has_node=true" >> $GITHUB_OUTPUT; else echo "has_node=false" >> $GITHUB_OUTPUT; fi
+  python-quality:
+    needs: detect
+    if: needs.detect.outputs.has_python == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install ruff
+      - run: ruff check .
+      - run: ruff format --check .
+  node-quality:
+    needs: detect
+    if: needs.detect.outputs.has_node == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: npm ci || npm install
+      - run: |
+          if [ -f .eslintrc ] || [ -f .eslintrc.js ] || [ -f .eslintrc.cjs ] || [ -f eslint.config.js ] || [ -f eslint.config.mjs ]; then npx eslint .; else echo "No ESLint config found; skipping"; fi
+      - run: |
+          if [ -f .prettierrc ] || [ -f .prettierrc.json ] || [ -f .prettierrc.js ] || [ -f prettier.config.js ]; then npx prettier --check .; else echo "No Prettier config found; skipping"; fi
