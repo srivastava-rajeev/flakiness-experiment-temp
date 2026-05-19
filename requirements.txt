@@ -3,5 +3,5 @@ numpy==2.4.4
 scikit-learn==1.8.0
 matplotlib==3.10.9
 pytest==9.0.3
-playwright==1.58.0
+playwright==1.60.0
 joblib==1.5.3
